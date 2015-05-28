@@ -7,13 +7,20 @@
 
   "permissions": [
     "https://*.google.com/search*",
-    "https://*.google.co.jp/search*"
+    "https://*.google.co.jp/search*",
+    "storage"
   ],
   "content_scripts":[
     {
       "matches":["https://*.google.com/*","https://*.google.co.jp/*"],
-      "js":["jquery.js","esa_search.js"]
+      "js":[
+        "jquery.js",
+        "credential.js",
+        "esa_search.js"
+      ]
     }
-  ]
+  ],
+  "background":{"scripts":["credential.js"]},
+  "options_page": "option.html"
 }
 
