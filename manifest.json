@@ -1,0 +1,19 @@
+{
+  "manifest_version": 2,
+
+  "name": "esa Google Search",
+  "description": "search esa.io when google search result displays",
+  "version": "0.1",
+
+  "permissions": [
+    "https://*.google.com/search*",
+    "https://*.google.co.jp/search*"
+  ],
+  "content_scripts":[
+    {
+      "matches":["https://*.google.com/*","https://*.google.co.jp/*"],
+      "js":["jquery.js","esa_search.js"]
+    }
+  ]
+}
+
